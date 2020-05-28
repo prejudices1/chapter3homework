@@ -8,15 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.numviewholder> {
+public class adapter extends RecyclerView.Adapter<adapter.numviewholder> {
 
-    private static final String TAG = "ItemAdapter";
-
+    private static final String TAG = "adapter";
 
     private static int viewHolderCount;
     Context context;
 
-    public ItemAdapter(Context context) {
+    public adapter(Context context) {
         this.context = context;
         viewHolderCount = 0;
     }

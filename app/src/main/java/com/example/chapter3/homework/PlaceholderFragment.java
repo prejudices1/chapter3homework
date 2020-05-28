@@ -18,7 +18,7 @@ import com.airbnb.lottie.LottieAnimationView;
 
 public class PlaceholderFragment extends Fragment {
 
-    private ItemAdapter itemAdapter;
+    private adapter itemAdapter;
     private RecyclerView list;
     private LottieAnimationView animationView;
     private AnimatorSet set;
@@ -32,7 +32,7 @@ public class PlaceholderFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_placeholder, container, false);
         animationView=view.findViewById(R.id.animation_view);
         list = view.findViewById(R.id.list);
-        itemAdapter=new ItemAdapter(getActivity());
+        itemAdapter=new adapter(getActivity());
 
         list.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         list.setItemAnimator(new DefaultItemAnimator());
@@ -41,7 +41,7 @@ public class PlaceholderFragment extends Fragment {
 
         list.setVisibility(View.GONE);
 
-        return view;//不能再返回inflater.inflate(R.layout.fragment_placeholder, container, false)
+        return view;
     }
 
     @Override
@@ -54,12 +54,12 @@ public class PlaceholderFragment extends Fragment {
                 // 这里会在 5s 后执行
                 // TODO ex3-4：实现动画，将 lottie 控件淡出，列表数据淡入
                 ObjectAnimator alpha1 = ObjectAnimator.ofFloat(animationView,
-                        "alpha",1,0);
-                alpha1.setDuration(800);
+                        "alpha",1f,0f);
+                alpha1.setDuration(1000);
 
                 ObjectAnimator alpha2 = ObjectAnimator.ofFloat(list,
-                        "alpha",0,1);
-                alpha2.setDuration(800);
+                        "alpha",0f,1f);
+                alpha2.setDuration(1000);
 
                 list.setVisibility(View.VISIBLE);
                 set = new AnimatorSet();

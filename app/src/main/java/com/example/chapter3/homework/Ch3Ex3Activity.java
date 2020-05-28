@@ -31,7 +31,7 @@ public class Ch3Ex3Activity extends AppCompatActivity {
         ViewPager pager = findViewById(R.id.view_pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
 
-        titleList = new ArrayList<String>();// 每个页面的Title数据
+        titleList = new ArrayList<String>();
 
         titleList.add("好友列表");
 
